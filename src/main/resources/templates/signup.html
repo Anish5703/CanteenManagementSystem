@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign up</title>
+    <link rel="stylesheet" href="css/signup.css" />
+  </head>
+  <body>
+    <div class="nav">
+      <div class="nav1">
+        <img src="./img/C.png" alt="img" />
+      </div>
+      <div class="nav2">
+        <input type="text" placeholder="Search for products" />
+      </div>
+      <div class="nav3">
+        <a th:href="@{/home}">Home Page</a>
+        <a th:href="@{/menu}">All food items</a> 
+        <a th:href="@{/login}">Login</a>
+        <a style="color: black" th:href="@{/signup}">Sign up</a>
+      </div>
+    </div>
+    <div class="container">
+      <div class="container-sub">
+        <h2>Sign up</h2>
+        <form th:action="@{/signup/user}" method="post" enctype="multipart/form-data" th:object="${user}">
+          <div class="form-group">
+            <label for="username">Username:</label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Enter your username"  th:field="*{username}" 
+              required
+            />
+            <p class="error" th:if="${usernameStatus != null}">[[${usernameStatus}]]</p>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter your password" th:field="*{password}"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Phone number:</label>
+            <input
+              type="number"
+              id="number"
+              name="number"
+              placeholder="Enter your phone number" th:field="*{phone}"
+              required
+            />
+          <p class="error" th:text="${emailStatus}"></p>
+          </div>
+
+          <div class="form-group">
+            <label for="confirm-password">Confirm Password:</label>
+            <input
+              type="password"
+              id="confirm-password"
+              name="confirm-password"
+              placeholder="Confirm your password" 
+              required
+            />
+            <p class="error" th:if="${passwordStatus} != null">[[${passwordStatus}]]</p>
+          </div>
+          
+          <div class="form-group">
+			  <label for="userImage">Select Image:</label>
+			  <input type="file" name="userImage" class="userImage" placeholder="Choose File"
+			  accept="image/*" required />
+			  <p class="error" th:if="${imageStatus} != null">[[${imageStatus}]]</p>
+		  </div>
+
+          <div class="form-group">
+            <button type="submit">Sign Up</button>
+            <p class="login">
+              Already have an account? <a th:href="@{/login}"> Login</a>
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

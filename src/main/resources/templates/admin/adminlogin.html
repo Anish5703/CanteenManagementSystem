@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" th:href="@{/css/admin/adminlogin.css}" />
+    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css}">
+    <title>Admin Login</title>
+  </head>
+  <body>
+    <div class="Home">
+      <div class="nav">
+        <div class="nav1">
+          <img th:src="@{/img/logo.jpg}" alt="img" />
+        </div>
+        <div class="nav2">
+          <input type="text" placeholder="Search for products" />
+        </div>
+        <div class="nav3">
+          <a th:href="@{/admin/login}">Home Page</a>
+          <a th:href="@{/admin/addfood}">Add Food Menu</a>
+          <a th:href="@{/admin/viewfood}">View Food</a>
+          <a th:href="@{/admin/foodorder}">All Order</a>
+          <a th:href="@{/admin/profile}" ><i class="fa-regular fa-circle-user"></i></a>
+        </div>
+      </div>
+      <div class="container">
+        <h1>Canteen Management System</h1>
+      </div>
+    </div>
+    <div class="Home2">
+      <div class="Menu">
+        <h1>All food items</h1>
+      </div>
+        <div class="Menubar">
+          <div class="class1" th:if="${foodList != null}">
+            <div class="image" th:each="food : ${foodList}">
+              <img th:src="@{'/img/'+ ${food.imageId}}" />
+              <div class="heading">
+                <h1 th:text="${food.name}"></h1>
+                <p th:text="${food.price}"></p>
+              </div>
+              <div class="box">
+<button id="but1" type="button">Buy now</button>
+ <button id="but2" type="button">Add to cart</button>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

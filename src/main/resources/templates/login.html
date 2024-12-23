@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/login.css" />
+  </head>
+  <body>
+    <div class="nav">
+      <div class="nav1">
+        <img src="./img/C.png" alt="img" />
+      </div>
+      <div class="nav2">
+        <input type="text" placeholder="Search for products" />
+      </div>
+      <div class="nav3">
+        <a th:href="@{/home}">Home Page</a>
+        <a th:href="@{/menu}">All food items</a>
+        <a style="color: black" th:href="@{/login}">Login</a>
+        <a th:href="@{/signup}">Sign up</a>
+      </div>
+    </div>
+    <div class="container">
+      <div class="container-sub">
+        <h2>Login</h2>
+        <form th:action="@{/login/user}" method="post">
+          <div class="form-group">
+            <label for="username">Username:</label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Enter your username"
+              required
+            />
+     <p class="error" th:if="${loginStatus != null}">[[${loginStatus}]]</p>
+
+          </div>
+          <br />
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter your password"
+              required
+            />
+      <p class="error" th:if="${loginStatus != null}">[[${loginStatus}]]</p>
+
+          </div>
+          <br />
+          <div class="form-group">
+            <button type="submit">Login</button>
+          </div>
+          <p class="signup">
+            Don't have an account? <a href="signup.html">Sign up</a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View Food Item</title>
+    <link rel="stylesheet" th:href="@{/css/admin/viewfood.css}" />
+    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css}">
+  </head>
+  <body>
+    <div class="nav">
+      <div class="nav1">
+        <img th:src="@{/img/C.png}" alt="img" />
+      </div>
+      <div class="nav2">
+        <input type="text" placeholder="Search for products" />
+      </div>
+      <div class="nav3">
+        <a th:href="@{/admin/adminlogin.html}">Home Page</a>
+        <a th:href="@{/admin/addfood.html}">Add Food Menu</a>
+        <a style="color: black;" th:href="@{/admin/viewfood.html}">View Food Menu</a>
+        <a th:href="@{/admin/foodorder.html}">All Order</a>
+        <a th:href="@{/admin/adminprofile.html}" ><i class="fa-regular fa-circle-user"></i></a>
+      </div>
+    </div>
+    <div class="Home2">
+        <div class="Menubar">
+        <div class="class1">
+          <div class="image">
+            <img th:src="@{/img/samosa.jpg}" />
+            <div class="heading">
+              <h1>Samosa</h1>
+              <p>Rs 20</p>
+            </div>
+            <div class="box">
+              <button id="but1" type="button">Buy now</button>
+              <button id="but2" type="button">Add to cart</button>
+            </div>
+          </div>
+          <div class="image">
+            <img th:src="@{/img/momo.jpg}" />
+            <div class="heading">
+              <h1>Momo</h1>
+              <p>Rs 120</p>
+            </div>
+            <div class="box">
+              <button id="but1" type="button">Buy now</button>
+              <button id="but2" type="button">Add to cart</button>
+            </div>
+          </div>
+          <div class="image">
+            <img th:src="@{/img/paratha.jpg}" />
+            <div class="heading">
+              <h1>Parautha</h1>
+              <p>Rs 50</p>
+            </div>
+
+            <div class="box">
+              <button id="but1" type="button">Buy now</button>
+              <button id="but2" type="button">Add to cart</button>
+            </div>
+          </div>
+          <div class="image">
+            <img th:src="@{/img/Chowmine.jpg}" />
+            <div class="heading">
+              <h1>Chowmine</h1>
+              <p>Rs 50</p>
+            </div>
+            <div class="box">
+              <button id="but1" type="button">Buy now</button>
+              <button id="but2" type="button">Add to cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="class1">
+          <div class="image">
+            <img th:src="@{/img/samosa.jpg}" />
+            <div class="heading">
+              <h1>Samosa</h1>
+              <p>Rs 20</p>
+            </div>
+            <div class="box">
+              <button id="but1" type="button">Buy now</button>
+              <button id="but2" type="button">Add to cart</button>
+            </div>
+          </div>
+          <div class="image">
+            <img th:src="@{/img/momo.jpg}" />
+            <div class="heading">
+              <h1>Momo</h1>
+              <p>Rs 120</p>
+            </div>
+            <div class="box">
+              <button id="but1" type="button">Buy now</button>
+              <button id="but2" type="button">Add to cart</button>
+            </div>
+          </div>
+          <div class="image">
+            <img th:src="@{/img/paratha.jpg}" />
+            <div class="heading">
+              <h1>Parautha</h1>
+              <p>Rs 50</p>
+            </div>
+
+            <div class="box">
+              <button id="but1" type="button">Buy now</button>
+              <button id="but2" type="button">Add to cart</button>
+            </div>
+          </div>
+          <div class="image">
+            <img th:src="@{/img/Chowmine.jpg}" />
+            <div class="heading">
+              <h1>Chowmine</h1>
+              <p>Rs 50</p>
+            </div>
+            <div class="box">
+              <button id="but1" type="button">Buy now</button>
+              <button id="but2" type="button">Add to cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="class1">
+          <div class="image">
+            <img th:src="@{/img/samosa.jpg}" />
+            <div class="heading">
+              <h1>Samosa</h1>
+              <p>Rs 20</p>
+            </div>
+            <div class="box">
+              <button id="but1" type="button">Buy now</button>
+              <button id="but2" type="button">Add to cart</button>
+            </div>
+          </div>
+          <div class="image">
+            <img th:src="@{/img/momo.jpg}" />
+            <div class="heading">
+              <h1>Momo</h1>
+              <p>Rs 120</p>
+            </div>
+            <div class="box">
+              <button id="but1" type="button">Buy now</button>
+              <button id="but2" type="button">Add to cart</button>
+            </div>
+          </div>
+          <div class="image">
+            <img th:src="@{/img/paratha.jpg}" />
+            <div class="heading">
+              <h1>Parautha</h1>
+              <p>Rs 50</p>
+            </div>
+
+            <div class="box">
+              <button id="but1" type="button">Buy now</button>
+              <button id="but2" type="button">Add to cart</button>
+            </div>
+          </div>
+          <div class="image">
+            <img th:src="@{/img/Chowmine.jpg}" />
+            <div class="heading">
+              <h1>Chowmine</h1>
+              <p>Rs 50</p>
+            </div>
+            <div class="box">
+              <button id="but1" type="button">Buy now</button>
+              <button id="but2" type="button">Add to cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="class1">
+          <div class="image">
+            <img th:src="@{/img/samosa.jpg}" />
+            <div class="heading">
+              <h1>Samosa</h1>
+              <p>Rs 20</p>
+            </div>
+            <div class="box">
+              <button id="but1" type="button">Buy now</button>
+              <button id="but2" type="button">Add to cart</button>
+            </div>
+          </div>
+          <div class="image">
+            <img th:src="@{/img/momo.jpg}" />
+            <div class="heading">
+              <h1>Momo</h1>
+              <p>Rs 120</p>
+            </div>
+            <div class="box">
+              <button id="but1" type="button">Buy now</button>
+              <button id="but2" type="button">Add to cart</button>
+            </div>
+          </div>
+          <div class="image">
+            <img th:src="@{/img/paratha.jpg}" />
+            <div class="heading">
+              <h1>Parautha</h1>
+              <p>Rs 50</p>
+            </div>
+
+            <div class="box">
+              <button id="but1" type="button">Buy now</button>
+              <button id="but2" type="button">Add to cart</button>
+            </div>
+          </div>
+          <div class="image">
+            <img th:src="@{/img/Chowmine.jpg}" />
+            <div class="heading">
+              <h1>Chowmine</h1>
+              <p>Rs 50</p>
+            </div>
+            <div class="box">
+              <button id="but1" type="button">Buy now</button>
+              <button id="but2" type="button">Add to cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="class1">
+          <div class="image">
+            <img src="./img/samosa.jpg" />
+            <div class="heading">
+              <h1>Samosa</h1>
+              <p>Rs 20</p>
+            </div>
+            <div class="box">
+              <button id="but1" type="button">Buy now</button>
+              <button id="but2" type="button">Add to cart</button>
+            </div>
+          </div>
+          <div class="image">
+            <img src="./img/momo.jpg" />
+            <div class="heading">
+              <h1>Momo</h1>
+              <p>Rs 120</p>
+            </div>
+            <div class="box">
+              <button id="but1" type="button">Buy now</button>
+              <button id="but2" type="button">Add to cart</button>
+            </div>
+          </div>
+          <div class="image">
+            <img src="./img/paratha.jpg" />
+            <div class="heading">
+              <h1>Parautha</h1>
+              <p>Rs 50</p>
+            </div>
+
+            <div class="box">
+              <button id="but1" type="button">Buy now</button>
+              <button id="but2" type="button">Add to cart</button>
+            </div>
+          </div>
+          <div class="image">
+            <img src="./img/Chowmine.jpg" />
+            <div class="heading">
+              <h1>Chowmine</h1>
+              <p>Rs 50</p>
+            </div>
+            <div class="box">
+              <button id="but1" type="button">Buy now</button>
+              <button id="but2" type="button">Add to cart</button>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+  </body>
+</html>

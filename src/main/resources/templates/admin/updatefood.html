@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Update Food Item</title>
+    <link rel="stylesheet" th:href="@{/css/admin/updatefood.css}" />
+    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css}">
+  </head>
+  <body>
+    <div class="nav">
+      <div class="nav1">
+        <img th:src="@{/img/C.png}" alt="img" />
+      </div>
+      <div class="nav2">
+        <input type="text" placeholder="Search for products" />
+      </div>
+      <div class="nav3">
+        <a th:href="@{/admin/login}">Home Page</a>
+        <a th:href="@{/admin/addfood}">Add Food Menu</a>
+          <a th:href="@{/admin/viewfood}">View Food</a>
+        <a  th:href="@{/admin/foodorder}">All Order</a>
+        <a th:href="@{/admin/profile}"><i class="fa-regular fa-circle-user"></i></a>
+      </div>
+    </div>
+    <div class="container">
+        <div class="container-sub">
+        <h2>Update Food Item </h2>
+        <form th:action="@{/admin/updatefood/{id}/saved(id=${food.id})}" method="POST"
+        enctype="multipart/form-data" th:object="${updatedFood}">
+         
+          <div class="form-group">
+            <label for="foodname">Food name:</label>
+            <input type="text" id="foodname" name="foodname" placeholder="Enter food name"   th:field="*{name}" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="price">Price(Rs):</label>
+            <input type="text" id="price" name="price" placeholder="Enter price"
+                th:field="*{price}" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="foodImage">Select image:</label>
+            <input type="file" id="foodImage" name="foodImage" accept="image/*"
+            >
+        </div>
+        <div class="form-group">
+            <img th:src="@{'/img/'+ ${food.imageId}}" alt="Food Image" class="preview-image">
+        </div>
+
+        <button type="submit">Update</button>
+        </form>
+      </div>
+  </body>
+</html>
+

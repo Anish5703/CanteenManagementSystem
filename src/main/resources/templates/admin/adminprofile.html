@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Profile</title>
+    <link rel="stylesheet" th:href="@{/css/admin/adminprofile.css}" />
+    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css}">
+  </head>
+  <body>
+    <div class="nav">
+      <div class="nav1">
+        <img th:src="@{/img/C.png}" alt="img" />
+      </div>
+      <div class="nav2">
+        <input type="text" placeholder="Search for products" />
+      </div>
+      <div class="nav3">
+        <a th:href="@{/admin/login}">Home Page</a>
+        <a th:href="@{/admin/addfood}">Add Food Menu</a>
+         <a th:href="@{/admin/viewfood}">View Food</a>
+        <a th:href="@{/admin/foodorder}">All Order</a>
+        <a style="color: black;"; th:href="@{/admin/profile}" ><i class="fa-regular fa-circle-user"></i></a>
+      </div>
+    </div>
+    <div class="container">
+      <div class="container-sub">
+        <h2>Profile</h2>
+        <div class="profile-header">
+          <img th:src="@{'/img/'+ ${user.imageId}}" alt="Admin Photo" class="profile-pic">
+          <h1 th:text="${user.username}"></h1>
+        </div>
+        <div class="profile-details">
+          <ul>
+            <li > Role : <strong th:text="${user.role}"></strong></li>
+            <li >Phone Number :<strong th:text="${user.phone}"></strong></li>
+          </ul>
+          <button class="button1" type="button" 
+           th:onclick="'location.href=\'' + @{/logout/user} + '\''">
+           Log out</button>
+           
+          <button class="button2" type="button" th:onclick="'location.href=\'' + @{/profile/upadte} + '\''"
+          >Update Profile</button>
+          
+        </div> 
+        
+    </div>
+    </div>
+  </body>
+</html>

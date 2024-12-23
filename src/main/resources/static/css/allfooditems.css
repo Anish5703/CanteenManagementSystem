@@ -1,0 +1,124 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    list-style: none;
+    font-family: sans-serif;
+}
+.nav{
+    background-color: rgb(197, 2, 2);
+    color: white;
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.nav1 img{
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav3{
+    /* height: 8vh; */
+    width: 55%;
+    font-weight: bold;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;   
+}
+.nav2 {
+    height: 10vh;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ .nav2 input{
+    height: 8vh;
+    width: 95%;
+    border-radius: 5px;
+    border: none;
+    padding-left: 10px;
+ }
+.nav3 a{
+    text-decoration: none;
+    color: white;
+}
+.Home2{
+    height: 370vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Menubar{
+    height: 360vh;
+    width: 100%;
+    justify-content: center;
+}
+.class1{
+    height: 60vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.image{
+    border-radius: 4%;
+    border: 1px solid rgb(209, 205, 205);
+    width: 20%;
+    height:55vh ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.image .box{
+    width: 95%;
+    height: 8vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.image img{
+    height: 35vh;
+    width: 100%;
+    border-radius: 8px 8px 0px 0px;
+}
+.heading{
+    width: 95%;
+}
+.heading h1{
+    font-size: 20px;
+    height: 6.5vh;
+}
+.heading p{
+    font-size: 15px;
+    height: 4vh;
+}
+
+/* buy and add to cart button */
+.box #but1, #but2{
+    height: 6vh;
+    width: 36%;
+    border: 1px solid rgb(216, 214, 214);
+    /* border: none; */
+    border-radius: 8%;
+}
+.nav3 a:hover{
+    color: black;
+    cursor: pointer;
+}
+.box #but1:hover{
+    background-color: rgb(197, 2, 2);
+    color: white;
+    cursor: pointer;
+}
+.box #but2:hover{
+    background-color: rgb(248, 189, 0);
+    color: white;
+    cursor: pointer;
+
+}
