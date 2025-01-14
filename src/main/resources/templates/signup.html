@@ -16,7 +16,7 @@
       </div>
       <div class="nav3">
         <a th:href="@{/home}">Home Page</a>
-        <a th:href="@{/menu}">All food items</a> 
+                  <a th:href="@{/viewFood}">All Food Items</a>
         <a th:href="@{/login}">Login</a>
         <a style="color: black" th:href="@{/signup}">Sign up</a>
       </div>
@@ -24,7 +24,8 @@
     <div class="container">
       <div class="container-sub">
         <h2>Sign up</h2>
-        <form th:action="@{/signup/user}" method="post" enctype="multipart/form-data" th:object="${user}">
+        <form th:action="@{/signup/user}" method="post" enctype="multipart/form-data"
+         onsubmit="return handleSubmit(event)" th:object="${user}">
           <div class="form-group">
             <label for="username">Username:</label>
             <input
@@ -34,7 +35,7 @@
               placeholder="Enter your username"  th:field="*{username}" 
               required
             />
-            <p class="error" th:if="${usernameStatus != null}">[[${usernameStatus}]]</p>
+            <p class="error" id="usernameErr" th:text="${usernameErr}"></p>
           </div>
 
           <div class="form-group">
@@ -46,6 +47,7 @@
               placeholder="Enter your password" th:field="*{password}"
               required
             />
+                      <p class="error" id="passwordErr" th:text="${passwordErr}"></p>
           </div>
 
           <div class="form-group">
@@ -57,7 +59,7 @@
               placeholder="Enter your phone number" th:field="*{phone}"
               required
             />
-          <p class="error" th:text="${emailStatus}"></p>
+          <p class="error" id="phoneErr" th:text="${phoneErr}"></p>
           </div>
 
           <div class="form-group">
@@ -69,18 +71,18 @@
               placeholder="Confirm your password" 
               required
             />
-            <p class="error" th:if="${passwordStatus} != null">[[${passwordStatus}]]</p>
+            <p class="error" id="confirmPasswordErr"></p>
           </div>
           
           <div class="form-group">
 			  <label for="userImage">Select Image:</label>
 			  <input type="file" name="userImage" class="userImage" placeholder="Choose File"
-			  accept="image/*" required />
-			  <p class="error" th:if="${imageStatus} != null">[[${imageStatus}]]</p>
+			  accept="image/*" />
+			  <p class="error" id="imageErr" th:text="${imageErr}"></p>
 		  </div>
 
           <div class="form-group">
-            <button type="submit">Sign Up</button>
+            <button type="submit" disabled>Sign Up</button>
             <p class="login">
               Already have an account? <a th:href="@{/login}"> Login</a>
             </p>
@@ -88,5 +90,6 @@
         </form>
       </div>
     </div>
+    <script src="/javascript/signup.js"></script>
   </body>
 </html>

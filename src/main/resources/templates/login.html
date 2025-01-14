@@ -14,12 +14,14 @@
       <div class="nav2">
         <input type="text" placeholder="Search for products" />
       </div>
+      
       <div class="nav3">
         <a th:href="@{/home}">Home Page</a>
-        <a th:href="@{/menu}">All food items</a>
-        <a style="color: black" th:href="@{/login}">Login</a>
+          <a style="color: black" th:href="@{/viewFood}">All Food Items</a>
+        <a  th:href="@{/login}">Login</a>
         <a th:href="@{/signup}">Sign up</a>
       </div>
+     
     </div>
     <div class="container">
       <div class="container-sub">
@@ -55,7 +57,7 @@
             <button type="submit">Login</button>
           </div>
           <p class="signup">
-            Don't have an account? <a href="signup.html">Sign up</a>
+            Don't have an account? <a th:href="@{/signup}">Sign up</a>
           </p>
         </form>
       </div>

@@ -56,6 +56,11 @@ public class Food {
 	{
 		return "Name : "+this.name;
 	}
+
+	public Food orElseThrow(Object object) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 }

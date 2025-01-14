@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Food Order</title>
+    <link rel="stylesheet" th:href="@{/css/admin/foodorder.css}" />
+    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css}">
+  </head>
+  <body>
+    <div class="nav">
+      <div class="nav1">
+        <img th:src="@{/img/C.png}" alt="img" />
+      </div>
+      <div class="nav2">
+        <input type="text" placeholder="Search for products" />
+      </div>
+      <div class="nav3">
+        <a th:href="@{/admin/login}">Home Page</a>
+        <a th:href="@{/admin/addfood}">Add Food Menu</a>
+          <a th:href="@{/admin/viewfood}">View Food</a>
+        <a style="color: black;" th:href="@{/admin/foodorder}">All Order</a>
+        <a th:href="@{/admin/profile}" ><i class="fa-regular fa-circle-user"></i></a>
+      </div>
+    </div>
+    <div class="food-text">
+      <h1>All Food Orders</h1>
+    </div>
+    <div class="table-container">
+      <table>
+          <thead>
+              <tr>
+                  <th>Tiket id</th>
+                  <th>Order No</th>
+                  <th>Food Item</th>
+                  <th>Price (RS.)</th>
+                  <th>Qty</th>
+                  <th>Total</th>
+                  <th>Status</th>
+                  <th>Time</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>0010</td>
+                  <td>2</td>
+                  <td>Samosa</td>
+                  <td>20</td>
+                  <td>4</td>
+                  <td>80</td>
+                  <td>Pending</td>
+                  <td>9:00</td>
+              </tr>
+              <tr>
+                  <td>0001</td>
+                  <td>1</td>
+                  <td>Momo</td>
+                  <td>120</td>
+                  <td>1</td>
+                  <td>120</td>
+                  <td>Delivered</td>
+                  <td>11:00</td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+  </body>
+</html>

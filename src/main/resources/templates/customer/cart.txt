@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Canteen Cart</title>
+    <link rel="stylesheet" th:href="@{/css/customer/cart.css}">
+</head>
+<body>
+    <div class="nav">
+        <div class="nav1">
+          <img th:src="@{/img/C.png}" alt="img" />
+        </div>
+        <div class="nav2">
+          <input type="text" placeholder="Search for products" />
+        </div>
+        <div class="nav3">
+          <a th:href="@{/customer/home}">Home Page</a>
+          <a th:href="@{/customer/viewFood}">All Food items</a>
+          <a style="color: black;"; th:href="@{/customer/cart}">Cart</a>
+          <a th:href="@{/customer/profile}">My Profile</a>
+        </div>
+      </div>
+      <div class="shopping-cart">
+        <table>
+          <thead>
+            <tr>
+              <th>Item List</th>
+              <th>Quantity</th>
+              <th>Rate</th>
+              <th>Total Price</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="item">
+                    <img src="./img/Chowmine.jpg" alt="" height="40vh" >
+                  <span>Chicken mince (Keema)</span>
+                </div>
+              </td>
+              <td>
+                <div class="quantity">
+                  <button>-</button>
+                  <span>2</span>
+                  <button>+</button>
+                </div>
+              </td>
+              <td>@Rs 100</td>
+              <td>Rs 200</td>
+              <td><button class="delete">🗑️</button></td>
+            </tr>
+            <tr>
+              <td>
+                <div class="item">
+                    <img src="./img/Chowmine.jpg" alt="" height="40vh" >
+                  <span>Mutton Mince (Keema)</span>
+                </div>
+              </td>
+              <td>
+                <div class="quantity">
+                  <button>-</button>
+                  <span>1</span>
+                  <button>+</button>
+                </div>
+              </td>
+              <td>@Rs 100</td>
+              <td>Rs 100</td>
+              <td><button class="delete">🗑️</button></td>
+            </tr>
+            <tr>
+              <td>
+                <div class="item">
+                    <img src="./img/Chowmine.jpg" alt="" height="40vh" >
+                  <span>Leg Piece</span>
+                </div>
+              </td>
+              <td>
+                <div class="quantity">
+                  <button>-</button>
+                  <span>1</span>
+                  <button>+</button>
+                </div>
+              </td>
+              <td>@Rs 100</td>
+              <td>Rs 100</td>
+              <td><button class="delete">🗑️</button></td>
+            </tr>
+            <tr>
+                <td>
+                  <div class="item">
+                    <img src="./img/Chowmine.jpg" alt="" height="40vh" >
+                    <span>Leg Piece</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="quantity">
+                    <button>-</button>
+                    <span>1</span>
+                    <button>+</button>
+                  </div>
+                </td>
+                <td>@Rs 100</td>
+                <td>Rs 100</td>
+                <td><button class="delete">🗑️</button></td>
+              </tr>
+              
+          </tbody>
+        </table>
+        <div class="summary">
+          <p>Item Total: <span>Rs 600</span></p>
+        </div>
+        <button class="checkout">Continue Checkout</button>
+      </div>
+</body>
+</html>

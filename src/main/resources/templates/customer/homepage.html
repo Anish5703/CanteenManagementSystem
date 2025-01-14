@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" th:href="@{/css/homePage.css}" />
+    <title>Home Page</title>
+  </head>
+  <body>
+
+    <div class="Home">
+      <div class="nav">
+        <div class="nav1">
+          <img th:src="@{/img/C.png}" alt="img" />
+        </div>
+        <div class="nav2">
+          <input type="text" placeholder="Search for products" />
+        </div>
+        <div class="nav3">
+          <a th:href="@{/customer/home}">Home Page</a>
+          <a th:href="@{/customer/viewFood}">All Food Items</a>
+          <a th:href="@{/customer/cart}">Cart</a>
+                      <a  th:href="@{/customer/foodorder}">My Orders</a>
+
+          <a th:href="@{/customer/profile}">My Profile</a>
+        </div>
+      </div>
+      <div class="container">
+        <h1>Canteen Management System</h1>
+      </div>
+    </div>
+    <div class="Home2">
+      <div class="Menu">
+        <h1>All food items</h1>
+      </div>
+      <div class="Menubar">
+          <div class="class1" th:if="${foodList != null}">
+            <div class="image" th:each="food : ${foodList}">
+              <img th:src="@{'/img/food/'+ ${food.imageId}}" />
+              <div class="heading">
+                <h1 th:text="${food.name}"></h1>
+                <p th:text="${food.price}"></p>
+              </div>
+              <div class="box">
+<button id="but1" type="button" th:onclick="'location.href=\'' + @{/customer/purchase/{id}(id=${food.id})} + '\''">Buy Now</button>
+ <button id="but2" type="button" th:onclick="'location.href=\'' + @{/customer/cart/add/{id}(id=${food.id})} + '\''">Add To Cart</button>
+              </div>
+            </div>
+        </div>
+      
+       
+          </div>
+        </div>
+    
+    <div class="footer">
+        <div class="sub-footer">
+            <div class="footer-part1">
+                 <div class="footer-heading">
+      
+                    <span>Event Management</span>
+                 </div>
+                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A exercitationem, architecto sint consequatur officia molestiae vero repudiandae dignissimos</p>
+            </div>
+            
+            <div class="footer-part1">
+                <div class="footer-heading">
+                    <span>Contact Us</span>
+                </div>
+                <div class="footer-contact">
+                    <li><i class="fa fa-envelope" aria-hidden="true"></i>
+                        nirutagharti14@gmail.com</li>
+                    <li><i class="fa fa-phone" aria-hidden="true"></i>
+                        9700000000</li>
+                    <li><i class="fa fa-map-marker" aria-hidden="true"></i>
+                        Butwal,Nepal</li>
+                    <li><i class="fa fa-mobile" aria-hidden="true"></i>
+                        071 000000</li>
+                </div>
+            </div>
+            <div class="footer-part1">
+                <div class="footer-heading">
+                    <span>Sign Up</span>
+                </div>
+                <div class="sign">
+                     <input type="email" name="" id="sign" placeholder="Enter Your Email">
+                     <button type="submit">Submit</button>
+                </div>
+                <div class="icon">
+                    <li><i class="fa-brands fa-facebook-f"></i></li>
+                    <li><i class="fab fa-twitter"></i>
+                    </li>
+                    <li><i class='far fa-comment'></i>
+                    </li>
+                    
+                    <li><i class="fab fa-instagram"></i>
+                    </li>
+                </div>
+            </div>
+        </div> 
+     </div>
+     <div class="copy-right">
+        <h1>© Copyright 2024 Made By Niruta Gharti</h1>
+     </div>
+  </body>
+</html>

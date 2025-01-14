@@ -16,56 +16,40 @@
       <div class="nav2">
         <input type="text" placeholder="Search for products" />
       </div>
-      <div class="nav3">
-        <a th:href="@{/admin/login}">Home Page</a>
-        <a th:href="@{/admin/addfood}">Add Food Menu</a>
-        <a th:href="@{/admin/viewfood}">View Food</a>
-        <a style="color: black;" th:href="@{/admin/foodorder}">All Orders</a>
-        <a th:href="@{/admin/profile}"><i class="fa-regular fa-circle-user"></i></a>
-      </div>
+        <div class="nav3">
+            <a th:href="@{/customer/home}">Home Page</a>
+            <a th:href="@{/customer/viewFood}">All Food Items</a>
+            <a  th:href="@{/customer/cart}">Cart</a>
+            <a style="color: black;" th:href="@{/customer/foodorder}">My Orders</a>
+            <a th:href="@{/customer/profile}">My Profile</a>
+        </div>
     </div>
 
     <!-- Page Header -->
     <div class="food-text">
-      <h1>All Food Orders</h1>
+      <h1>My Food Orders</h1>
 	    </div>
 
     <!-- Orders Table -->
     <div class="table-container">
-      <form th:action="@{/admin/updateOrderStatus}" method="post">
+      <form th:action="@{/admin/foodOrder}" method="post">
         <table>
           <thead>
             <tr>
-              <th>Username</th>
-              <th>Order No</th>
               <th>Food Item</th>
               <th>Price (RS.)</th>
               <th>Qty</th>
               <th>Total</th>
               <th>Status</th>
-              <th>Action</th>
             </tr>
           </thead>
           <tbody th:if="${orders != null}">
             <tr th:each="order : ${orders}">
-              <td th:text="${order.user.username}"></td>
-              <td th:text="${order.id}"></td>
               <td th:text="${order.food.name}"></td>
               <td th:text="${order.food.price}"></td>
               <td th:text="${order.quantity}"></td>
               <td th:text="${order.amount}"></td>
-              <td>
-                <select th:name="'status_'+${order.id}">
-  <option th:each="status : ${statusType}" 
-          th:value="${status}" 
-          th:text="${status}" 
-            th:selected="${order.orderStatus != null && order.orderStatus.toString() == status}">
-  </option>
-
-                </select>
-              </td>
-              <td>
-                <button type="submit" name="orderId" th:value="${order.id}">Update</button>
+              <td th:text="${order.orderStatus}">
               </td>
             </tr>
           </tbody>

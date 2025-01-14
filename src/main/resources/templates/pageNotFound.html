@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=\, initial-scale=1.0" />
+    <title>Page Not Found</title>
+  </head>
+  <body>
+	  <center>
+		  <h4>Page Not Available</h4>
+	  </center>
+	  <center>
+		  <div th:if="${errorMsg != null}" id="error-group">
+			  <h6 th:text="${errorMsg}"></h6>
+		  </div>
+	  </center>
+	    <center>
+		  <a th:href="@{/login}">Go to main page</a>
+	  </center>
+  </body>
+</html>

@@ -16,22 +16,20 @@ public class Order {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	@ManyToOne
-	@JoinColumn(name = "item_id", nullable = false)
+	@JoinColumn(name = "food_id", nullable = false)
 	private Food food;
 	
 	@Column(nullable = false)
 	private int quantity;
 	
 	private double amount;
-	
-	private LocalTime deliveryTime;
-	
+		
 	 @CreationTimestamp
 	  private Instant createdAt;
 	 
 	 @ManyToOne
-	 @JoinColumn(name = "customer_id", nullable = false)
-	 private User customer;
+	 @JoinColumn(name = "user_id", nullable = false)
+	 private User user;
 	 
 	 @Enumerated(value = EnumType.STRING)
 	 private StatusType orderStatus;
@@ -39,11 +37,11 @@ public class Order {
 	 @Column(nullable = false)
 	 private String ticketID;
 
-	public Food getItem() {
+	public Food getFood() {
 		return food;
 	}
 
-	public void setItem(Food food) {
+	public void setFood(Food food) {
 		this.food = food;
 	}
 
@@ -63,20 +61,13 @@ public class Order {
 		this.amount = amount;
 	}
 
-	public LocalTime getDeliveryTime() {
-		return deliveryTime;
+
+	public User getUser() {
+		return user;
 	}
 
-	public void setDeliveryTime(LocalTime deliveryTime) {
-		this.deliveryTime = deliveryTime;
-	}
-
-	public User getCustomer() {
-		return customer;
-	}
-
-	public void setCustomer(User customer) {
-		this.customer = customer;
+	public void setUser(User customer) {
+		this.user = customer;
 	}
 
 	public StatusType getOrderStatus() {
@@ -103,6 +94,19 @@ public class Order {
 		return createdAt;
 	}
 	 
-	 
+	@Override
+	public String toString() {
+	    return "Order{" +
+	            "id=" + id +
+	            ", food=" + (food != null ? food.getId() : "null") + // Assuming Food has an id field
+	            ", quantity=" + quantity +
+	            ", amount=" + amount +
+	            ", createdAt=" + createdAt +
+	            ", user=" + (user != null ? user.getId() : "null") + // Assuming User has an id field
+	            ", orderStatus=" + orderStatus +
+	            ", ticketID='" + ticketID + '\'' +
+	            '}';
+	}
+
 
 }

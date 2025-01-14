@@ -11,7 +11,7 @@
     height: 100vh;
 }
 .nav{
-background-color: rgb(197, 2, 2);
+
     height: 10vh;
     width: 100%;
     display: flex;
@@ -35,7 +35,7 @@ background-color: rgb(197, 2, 2);
 }
 .nav3 a{
     text-decoration: none;
-    color:white;
+    color:black;
 }
 .nav2 {
    height: 10vh;
@@ -133,20 +133,107 @@ background-color: rgb(197, 2, 2);
     color: white;
 }
 .nav3 a:hover{
-    color: black;
+    color: rgb(197, 2, 2);
     cursor: pointer;
 }
 .box #but1:hover{
-
+    background-color: rgb(197, 2, 2);
     color: white;
     cursor: pointer;
 }
 .box #but2:hover{
-
+    background-color: rgb(248, 189, 0);
     color: white;
     cursor: pointer;
 
 }
-
+.footer{
+  height: 35vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.811);
+  display: flex;
+  justify-content: center;
+  margin-top: 5vh;
+}
+.sub-footer{
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  color: aliceblue;
+  justify-content: space-around;
+}
+.footer-part1{
+  width: 32%;
+  margin-top: 5vh;
+}
+.footer-heading{
+  font-size: 30px;
+  letter-spacing: 1px;
+  display: flex;
+  gap: 10px;
+}
+.footer-part1 p{
+  letter-spacing: 1px;
+  padding-top:14px;
+  font-size: 15px;
+  width: 70%;
+}
+.footer-heading li{
+  font-size: 15px;
+}
+.footer-contact{
+  margin-top: 10px
+}
+.footer-contact li i{
+  padding: 5px;
+}
+#sign{
+  background: #fff;
+  padding: 12px 15px;
+  color: #777;
+  font-size: 14px;
+  width: 45% !important;
+  border: none;
+  letter-spacing: 1px;
+  margin-top: 20px;
+}
+.sign button{
+  background-color: rgb(248, 189, 0);
+  padding: 12px 15px;
+  color: aliceblue;
+  font-size: 14px;
+  width: 20%;
+  border: none;
+  letter-spacing: 1px;
+}
+.sign button:hover{
+	background-color: rgb(197, 2, 2);
+	cursor: pointer;
+}
+.icon{
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+  font-size: 18px;
+}
+.icon li{
+  padding: 10px;
+}
+.copy-right{
+  background-color: rgba(0, 0, 0, 0.811);
+  margin-top: 1px;
+}
+.copy-right h1{
+  color: aliceblue;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+.copy-right h1 i{
+  padding: 3px;
+}
 
 

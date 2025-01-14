@@ -1,0 +1,152 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+.nav{
+   background-color: rgb(197, 2, 2);
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.nav1 img{
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav3{
+    height: 10vh;
+    width: 55%;
+    font-weight: bold;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;   
+}
+.nav3 a{
+    text-decoration: none;
+    color:white;
+}
+.nav2 {
+   height: 10vh;
+   width: 25%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.nav2 input{
+   height: 7vh;
+   width: 95%;
+   border-radius: 5px;
+   border: 1px solid grey;
+   padding-left: 10px;
+}
+.shopping-cart {
+    /* width: 90%; */
+    max-width: 1000px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  .Sh1{
+      height: 10vh;
+      width: 100%;
+      border: none;
+  }
+  .free-shipping {
+    color: red;
+    text-align: right;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  .cart a{
+    color: black;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  thead th {
+    text-align: left;
+    border-bottom: 2px solid #ddd;
+    padding: 10px 5px;
+  }
+  
+  tbody td {
+    padding: 10px 5px;
+    vertical-align: middle;
+  }
+  
+  .item {
+    display: flex;
+    align-items: center;
+  }
+  
+  .item img {
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  .quantity {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .quantity button {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    background: #f5f5f5;
+    cursor: pointer;
+  }
+  
+  .quantity span {
+    padding: 0 10px;
+  }
+  
+  .delete {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #d9534f;
+  }
+  
+  .summary {
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: right;
+  }
+  
+  .summary p {
+    margin: 5px 0;
+  }
+  
+  .summary span {
+    font-weight: bold;
+  }
+  
+  .checkout {
+    display: block;
+    width: 100%;
+    background: rgb(248, 189, 0);
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .checkout:hover {
+    background: rgb(197, 2, 2);
+  }
+  

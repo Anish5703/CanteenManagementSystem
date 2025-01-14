@@ -2,5 +2,5 @@ package com.cms.entity;
 
 public enum StatusType {
 
-	pending,ready,delieverd,cancelled;
+	pending,ready,delivered,cancelled;
 }

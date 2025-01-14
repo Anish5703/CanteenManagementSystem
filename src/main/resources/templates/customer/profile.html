@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin Profile</title>
-    <link rel="stylesheet" th:href="@{/css/admin/adminprofile.css}" />
+    <title>Customer Profile</title>
+    <link rel="stylesheet" th:href="@{/css/customer/profile.css}" />
     <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css}">
   </head>
   <body>
@@ -16,18 +16,19 @@
         <input type="text" placeholder="Search for products" />
       </div>
       <div class="nav3">
-        <a th:href="@{/admin/login}">Home Page</a>
-        <a th:href="@{/admin/addfood}">Add Food Menu</a>
-         <a th:href="@{/admin/viewfood}">View Food</a>
-        <a th:href="@{/admin/foodorder}">All Order</a>
-        <a style="color: black;"; th:href="@{/admin/profile}" ><i class="fa-regular fa-circle-user"></i></a>
+        <a th:href="@{/customer/home}">Home Page</a>
+        <a th:href="@{/customer/viewFood}">All Food Items</a>
+         <a th:href="@{/customer/cart}">Cart</a>
+                     <a  th:href="@{/customer/foodorder}">My Orders</a>
+
+        <a th:href="@{/customer/profile}">My Profile</a>
       </div>
     </div>
     <div class="container">
       <div class="container-sub">
         <h2>Profile</h2>
         <div class="profile-header">
-          <img th:src="@{'/img/user/'+ ${user.imageId}}" alt="Admin Photo" class="profile-pic">
+          <img th:src="@{'/img/user/'+ ${user.imageId}}" alt="Costumer Photo" class="profile-pic">
           <h1 th:text="${user.username}"></h1>
         </div>
         <div class="profile-details">

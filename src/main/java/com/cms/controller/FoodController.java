@@ -14,14 +14,20 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.cms.entity.Food;
+import com.cms.entity.Order;
+import com.cms.entity.StatusType;
 import com.cms.repository.FoodRepository;
 import com.cms.services.FoodService;
+import com.cms.services.OrderService;
 
 @Controller
 public class FoodController {
 
 @Autowired 
 private FoodService foodService;
+
+@Autowired 
+private OrderService orderService;
 
 //add new food item to the database 
 @PostMapping("/admin/addfood/save")
@@ -95,4 +101,6 @@ public String deleteFood(@PathVariable("id")String id,Model model)
 		return "redirect:/admin/login";
 	}
 }
+
+
 }

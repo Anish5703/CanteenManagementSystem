@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Canteen Cart</title>
+    <link rel="stylesheet" th:href="@{/css/customer/cart.css}">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="nav">
+        <div class="nav1">
+            <img th:src="@{/img/C.png}" alt="Logo">
+        </div>
+        <div class="nav2">
+            <input type="text" placeholder="Search for products">
+        </div>
+        <div class="nav3">
+            <a th:href="@{/customer/home}">Home Page</a>
+            <a th:href="@{/customer/viewFood}">All Food Items</a>
+            <a style="color: black;" th:href="@{/customer/cart}">Cart</a>
+                        <a th:href="@{/customer/foodorder}">My Orders</a>
+            <a th:href="@{/customer/profile}">My Profile</a>
+        </div>
+    </div>
+
+    <!-- Shopping Cart Section -->
+    <div class="shopping-cart">
+        <table>
+            <thead>
+                <tr>
+                    <th>Item Name</th>
+                    <th>Quantity</th>
+                    <th>Rate</th>
+                    <th>Total Price</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody th:if="${cart != null}">
+                <!-- Loop through cart items dynamically -->
+                <tr th:each="item : ${cart.items}">
+                    <td>
+                        <span th:text="${item.food.name}">Food Name</span>
+                    </td>
+                    <td>
+                     <div class="quantity">
+        <!-- Decrease Quantity Button -->
+        <button th:onclick="'location.href=\'' + @{/customer/cart/decrease/{id}(id=${item.id})} + '\''">-</button>
+        <span th:text="${item.quantity}">0</span>
+        <!-- Increase Quantity Button -->
+        <button th:onclick="'location.href=\'' + @{/customer/cart/increase/{id}(id=${item.id})} + '\''">+</button>
+    </div>
+                    </td>
+                    <td th:text="'@Rs ' + ${item.food.price}">@Rs 0</td>
+                    <td th:text="'Rs ' + (${item.food.price} * ${item.quantity})">Rs 0</td>
+                    <td>
+                        <button class="delete" th:onclick="'location.href=\'' + @{/customer/cart/delete/{id}(id=${item.id})} + '\''">🗑️</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Summary Section -->
+        <div class="summary" th:if="${cart != null}">
+            <p>Item Total: <span th:text="'Rs ' + ${cart.totalAmount}">Rs 0</span></p>
+        </div>
+        <button class="checkout" th:onclick="'location.href=\'' + @{/customer/checkout} + '\''">Continue Checkout</button>
+    </div>
+</body>
+</html>

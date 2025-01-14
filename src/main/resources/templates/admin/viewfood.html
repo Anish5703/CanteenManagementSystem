@@ -27,7 +27,7 @@
         <div class="Menubar">
           <div class="class1" th:if="${foodList != null}">
             <div class="image" th:each="food : ${foodList}">
-              <img th:src="@{'/img/'+ ${food.imageId}}" />
+              <img th:src="@{'/img/food/'+ ${food.imageId}}" />
               <div class="heading">
                 <h1 th:text="${food.name}"></h1>
                 <p th:text="${food.price}"></p>
@@ -38,6 +38,7 @@
               </div>
             </div>
         </div>
+      </div>
       </div>
   </body>
 </html>

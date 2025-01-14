@@ -48,6 +48,19 @@
         <button type="submit">Add</button>
         </form>
       </div>
+      
+      
+      <script>
+  document.getElementById("price").addEventListener("input", function (e) {
+    // Allow only numbers and optionally decimals
+    this.value = this.value.replace(/[^0-9.]/g, ""); // Remove anything that's not a number or a dot
+    // Prevent multiple dots
+    if ((this.value.match(/\./g) || []).length > 1) {
+      this.value = this.value.replace(/\.+$/, ""); // Remove extra dots
+    }
+  });
+</script>
+
   </body>
 </html>
 
