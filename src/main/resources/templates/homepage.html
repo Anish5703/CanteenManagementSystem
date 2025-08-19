@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -23,7 +23,7 @@
         </div>
       </div>
       <div class="container">
-        <h1>Canteen Management System</h1>
+        <h1>Instant Dine</h1>
         <p th:if="${loginStatus != null}">[[${loginStatus}]]</p>
       </div>
     </div>
@@ -34,7 +34,7 @@
       <div class="Menubar">
           <div class="class1" th:if="${foodList != null}">
             <div class="image" th:each="food : ${foodList}">
-              <img th:src="@{'/img/food'+ ${food.imageId}}" />
+              <img th:src="@{'/food/'+ ${food.imageId}}" />
               <div class="heading">
                 <h1 th:text="${food.name}"></h1>
                 <p th:text="${food.price}"></p>

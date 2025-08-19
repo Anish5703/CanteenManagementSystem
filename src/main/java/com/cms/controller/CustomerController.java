@@ -43,7 +43,7 @@ public String getCustomerHomepage(Model model,HttpServletRequest req ,HttpServle
 		throw new OnlyCustomerIsAuthorizedException();
 	
 	model.addAttribute("foodList", foodService.getAllFood());
-	return "/customer/homepage.html";
+	return "customer/homepage.html";
 }
 
 @GetMapping("/customer/viewFood")
@@ -55,7 +55,7 @@ public String getCustomerViewFoodPage(HttpServletRequest req ,
 		throw new OnlyCustomerIsAuthorizedException();
 	
 	model.addAttribute("foodList", foodService.getAllFood());
-	return "/customer/viewFood.html";
+	return "customer/viewfood.html";
 }
 
 @GetMapping("/customer/cart")
@@ -70,7 +70,7 @@ public String getCustomerCartPage(Model model,
 	if(user == null)
 		throw new UserNotFoundException();
     model.addAttribute("cart",cartService.getCartByUser(user));
-    return "/customer/cart.html";
+    return "customer/cart.html";
 }
 
 @GetMapping("/customer/profile")
@@ -94,7 +94,7 @@ public String getCustomerProfilePage(HttpServletResponse resp
 @GetMapping("/customer/orderConfirmation")
 public String getCustomerOrderConfirmationPage()
 {
-	return "/customer/orderconfirmation.html";
+	return "customer/orderconfirmation.html";
 }
 
 //view all foods order
@@ -108,7 +108,7 @@ public String showFoodOrder(HttpServletResponse resp,
 	
 	User user = userService.getByCookieId(resp, req);
 	model.addAttribute("orders",orderService.getOrderListByUser(user));
-	return "/customer/foodorder.html";
+	return "customer/foodorder.html";
 }
 
 }

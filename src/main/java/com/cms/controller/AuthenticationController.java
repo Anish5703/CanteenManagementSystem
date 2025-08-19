@@ -73,14 +73,14 @@ public class AuthenticationController {
     	 model.addAttribute("user",user);
     	 
     	 if(user.getRole() == UserType.admin)
-    	 return "admin/adminlogin";  //return to admin homepage
+    	 return "redirect:/admin/login";  //return to admin homepage
     	 if(user.getRole() == UserType.customer)
     	 return "redirect:/customer/home"; //return to customer homepage
     		 
-    	 return "/home"; //return to  homepage
+    	 return "redirect:/home"; //return to  homepage
      }
      else
-        return "/login.html";      //return to the log in page
+        return "login.html";      //return to the log in page
 	}
 	
 	

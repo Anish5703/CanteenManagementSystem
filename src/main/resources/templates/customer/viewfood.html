@@ -16,11 +16,11 @@
         <input type="text" placeholder="Search for products" />
       </div>
       <div class="nav3">
-        <a th:href="@{/admin/login}">Home Page</a>
-        <a th:href="@{/admin/addfood}">Add Food Menu</a>
-        <a style="color: black;" th:href="@{/admin/viewfood}">View Food Menu</a>
-        <a th:href="@{/admin/foodorder}">All Order</a>
-        <a th:href="@{/admin/profile}" ><i class="fa-regular fa-circle-user"></i></a>
+          <a th:href="@{/customer/home}">Home Page</a>
+          <a th:href="@{/customer/viewFood}">All Food Items</a>
+          <a th:href="@{/customer/cart}">Cart</a>
+          <a  th:href="@{/customer/foodorder}">My Orders</a>
+          <a th:href="@{/customer/profile}">My Profile</a><i class="fa-regular fa-circle-user"></i></a>
       </div>
     </div>
     <div class="Home2">
@@ -33,8 +33,8 @@
                 <p th:text="${food.price}"></p>
               </div>
               <div class="box">
-<button id="but1" type="button" th:onclick="'location.href=\'' + @{/admin/updatefood/{id}(id=${food.id})} + '\''">Update</button>
- <button id="but2" type="button" th:onclick="'location.href=\'' + @{/admin/deletefood/{id}(id=${food.id})} + '\''">Delete</button>
+                  <button id="but1" type="button" th:onclick="'location.href=\'' + @{/customer/purchase/{id}(id=${food.id})} + '\''">Buy Now</button>
+                  <button id="but2" type="button" th:onclick="'location.href=\'' + @{/customer/cart/add/{id}(id=${food.id})} + '\''">Add To Cart</button>
               </div>
             </div>
         </div>

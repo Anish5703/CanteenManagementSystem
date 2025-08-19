@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,7 +9,7 @@
   <body>
     <div class="nav">
       <div class="nav1">
-        <img src="./img/C.png" alt="img" />
+        <img th:src="@{/img/logo.jpg}" alt="img" />
       </div>
       <div class="nav2">
         <input type="text" placeholder="Search for products" />
@@ -51,7 +51,7 @@
           </div>
 
           <div class="form-group">
-            <label for="email">Phone number:</label>
+            <label for="number">Phone number:</label>
             <input
               type="number"
               id="number"
@@ -76,7 +76,7 @@
           
           <div class="form-group">
 			  <label for="userImage">Select Image:</label>
-			  <input type="file" name="userImage" class="userImage" placeholder="Choose File"
+			  <input type="file" name="userImage" id="userImage" class="userImage" placeholder="Choose File"
 			  accept="image/*" />
 			  <p class="error" id="imageErr" th:text="${imageErr}"></p>
 		  </div>

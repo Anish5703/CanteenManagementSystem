@@ -69,6 +69,7 @@
     width: 100%;
     justify-content: center;
 }
+/*
 .class1{
     height: 60vh;
     width: 100%;
@@ -77,6 +78,16 @@
     justify-content: space-around;
     align-items: center;
     gap: 20px;
+}
+*/
+.class1{
+    height: auto;           /* changed from 60vh to auto to fit all rows */
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;        /* added this to allow items to wrap to next line */
+    justify-content: space-around;
+    align-items: flex-start; /* changed from center to flex-start for better alignment */
+    gap: 20px;              /* optional: adds spacing between food cards */
 }
 .image{
     border-radius: 4%;

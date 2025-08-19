@@ -101,7 +101,7 @@ public class AdminController {
 			throw new OnlyAdminIsAuthorizedException();
 		model.addAttribute("orders",orderService.getOrderList());
 		model.addAttribute("statusType",Arrays.asList("pending", "ready", "delivered", "cancelled"));
-		return "/admin/foodorder.html";
+		return "admin/foodorder.html";
 	}
 	
 	//update order status
@@ -127,12 +127,12 @@ public class AdminController {
 
 	        }
 
-	        return "redirect:/admin/foodorder";
+
 	    } catch (Exception e) {
 	        model.addAttribute("error", "Failed to update order status.");
 	        System.out.println("Failed to update status ");
-	        return "/admin/foodorder";
 	    }
+		return "redirect:/admin/foodorder";
 	}
 
 

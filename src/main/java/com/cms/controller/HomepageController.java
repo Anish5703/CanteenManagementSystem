@@ -35,7 +35,7 @@ public class HomepageController {
 	{
 		model.addAttribute("foodList", foodService.getAllFood());
 
-		return "/homepage.html"; 
+		return "homepage.html";
 	}
 	
 	//return view all food 
@@ -43,7 +43,7 @@ public class HomepageController {
 	public String getViewFoodPage(Model model)
 	{
 		model.addAttribute("foodList", foodService.getAllFood());
-        return "/viewfood.html";
+        return "viewfood.html";
 	}
 	
 	//get signup page
@@ -53,14 +53,16 @@ public class HomepageController {
 		if(!model.containsAttribute("user"))
 		model.addAttribute("user",new User());
 		
-		return "/signup.html";
+		return "signup.html";
 	}
+
+
 	
     //get page not found 
 	@GetMapping("/pageNotFound")
 	public String showPageNOtFound()
 	{
-		return "/pageNOtFound";
+		return "pageNOtFound.html";
 	}
 	
 }

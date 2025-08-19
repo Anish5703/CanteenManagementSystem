@@ -45,7 +45,7 @@ public String saveNewFood(@ModelAttribute Food food,
 	else
 	{
 		model.addAttribute("addStatus","Failed To Add New Food");
-		return "/admin/addfood";
+		return "redirect:/admin/addfood";
 	}
 }
 
@@ -58,7 +58,7 @@ public String showUpdateFood(@PathVariable("id") String id, Model model) {
 	{
 		model.addAttribute("food",food);
 		model.addAttribute("updatedFood",food);
-		return "/admin/updatefood";
+		return "redirect:/admin/updatefood";
 	}
 	else
     return "redirect:/admin/viewfood"; // Thymeleaf template name
